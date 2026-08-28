@@ -1,42 +1,55 @@
-# Simple BMI Calculator
+# BMI Calculator (Python) - Version 2.0
 
-A lightweight command-line interface (CLI) application built in Python to calculate Body Mass Index (BMI) and determine weight categories based on standard metric measurements.
+A lightweight, robust, and highly efficient command-line application built in Python to calculate Body Mass Index (BMI), classify weight categories according to World Health Organization (WHO) standards, and provide personalized healthy weight ranges.
 
-## Features
-* **Instant calculation:** Computes BMI instantly from user input.
-* **Health classification:** Categorizes results automatically (Underweight, Normal, Overweight, Obese).
-* **High precision:** Outputs results rounded to two decimal places.
-* **No external dependencies:** Runs purely on standard Python libraries.
+## Features & Improvements in v2.0
+* **Algorithmic Efficiency:** Strict \(\mathcal{O}(1)\) Time Complexity and \(\mathcal{O}(1)\) Space Complexity.
+* **WHO Standard Classification:** Standardized categories (Underweight, Normal weight, Overweight, Obese Class I/II/III).
+* **Ideal Weight Span Estimation:** Automatically calculates the recommended healthy weight range for the user's height.
+* **Input Validation & Resilience:** Robust protection against invalid entries (non-numeric, zero, negative, out-of-range inputs) and graceful termination on `Ctrl+C` (`KeyboardInterrupt`).
+* **Clean Code & Modularity:** Fully typed (PEP 484), docstring-documented (PEP 257), and structured into reusable, testable functions.
+* **Automated Unit Tests:** Built-in test suite covering calculations, boundary conditions, and exception cases.
+
+## Algorithmic Complexity
+* **Time Complexity:** \(\mathcal{O}(1)\) — Constant-time mathematical computations and fixed-size threshold lookups.
+* **Space Complexity:** \(\mathcal{O}(1)\) — Minimal constant memory footprint with zero allocations on heap structures.
 
 ## How It Works
-The script collects height (meters) and weight (kilograms) to compute BMI using the standard mathematical formula:
-\[\text{BMI} = \frac{\text{weight in kilograms}}{\text{height in meters}^2}\]
-
-## Requirements
-* Python 3.x
+BMI is calculated using the standard metric formula:
+\[\text{BMI} = \frac{\text{weight in kilograms}}{(\text{height in meters})^2}\]
 
 ## Getting Started
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com
-   ```
-2. Navigate to the project folder:
-   ```bash
-   cd your-repo-name
-   ```
-3. Run the script:
-   ```bash
-   python bmi_calculator.py
-   ```
+### Prerequisites
+* Python 3.8 or higher
+
+### Running the Application
+```bash
+python BMI.py
+```
+
+### Running Tests
+```bash
+python -m unittest test_bmi.py -v
+```
 
 ## Example Usage
 ```text
-Enter your height in meters: 1.75
-Enter your weight in kilograms: 70
+=============================================
+       BMI CALCULATOR - VERSION 2.0
+=============================================
+Enter your height in meters (e.g., 1.75): 1.75
+Enter your weight in kilograms (e.g., 70.0): 70
 
-Your BMI is: 22.86
-Category: Normal weight
+---------------------------------------------
+                  RESULTS
+---------------------------------------------
+ Height           : 1.75 m
+ Weight           : 70.00 kg
+ Calculated BMI   : 22.86
+ Health Category  : Normal weight
+ Ideal Weight Span: 56.7 kg - 76.3 kg
+---------------------------------------------
 ```
 
 ## License
